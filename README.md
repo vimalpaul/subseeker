@@ -69,9 +69,7 @@ DNS brute-force enumeration is performed only when explicitly enabled and uses s
 
     pip3 install aiohttp dnspython colorama
 
-### Optional Installation Script
 
-An optional installation script is provided for convenience to automate dependency setup.
 
 ---
 
