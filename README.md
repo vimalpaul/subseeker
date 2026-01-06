@@ -4,11 +4,15 @@ SubSeeker is a lightweight, single-file subdomain discovery tool designed for pa
 
 This project is intended for use in approved environments such as bug bounty programs with a published policy, internal security assessments, and educational research.
 
+---
+
 ## Overview
 
 SubSeeker focuses on simplicity, transparency, and portability. The tool is implemented as a single Python file, making it easy to audit, modify, and execute without complex setup or external services.
 
 The primary goal of SubSeeker is to help security practitioners efficiently identify subdomains associated with a target domain using passive techniques, with optional controlled DNS resolution.
+
+---
 
 ## Key Capabilities
 
@@ -19,6 +23,8 @@ The primary goal of SubSeeker is to help security practitioners efficiently iden
 - Clean command-line output
 - Generation of text, JSON, and HTML result files
 - No API keys or authentication required
+
+---
 
 ## Data Sources
 
@@ -39,77 +45,95 @@ SubSeeker performs passive enumeration using a combination of public datasets an
 
 DNS brute-force enumeration is performed only when explicitly enabled and uses standard DNS resolution techniques.
 
+---
+
 ## Execution Modes
 
-Mode      Description
-quick     Fast enumeration using a limited set of passive sources
-standard  Balanced enumeration combining multiple sources (default)
-deep      Extended enumeration using all available sources and larger wordlists
-stealth   Reduced request rate and delayed execution to minimize noise
+| Mode     | Description |
+|---------|-------------|
+| quick    | Fast enumeration using a limited set of passive sources |
+| standard | Balanced enumeration combining multiple sources (default) |
+| deep     | Extended enumeration using all available sources and larger wordlists |
+| stealth  | Reduced request rate and delayed execution to minimize noise |
+
+---
 
 ## Installation
 
-Clone the repository:
+### Clone the Repository
 
-git clone https://github.com/vimalpaul/subseeker.git
-cd subseeker
+    git clone https://github.com/vimalpaul/subseeker.git
+    cd subseeker
 
-Install required Python dependencies:
+### Install Required Dependencies
 
-pip3 install aiohttp dnspython colorama
+    pip3 install aiohttp dnspython colorama
 
-An optional installation script is provided for convenience.
+### Optional Installation Script
+
+An optional installation script is provided for convenience to automate dependency setup.
+
+---
 
 ## Usage
 
-Run a standard enumeration:
+### Run a Standard Enumeration
 
-python3 subseeker.py -d example.com
+    python3 subseeker.py -d example.com
 
-Run a deep enumeration:
+### Run a Deep Enumeration
 
-python3 subseeker.py -d example.com -m deep
+    python3 subseeker.py -d example.com -m deep
 
-Run a quick enumeration:
+### Run a Quick Enumeration
 
-python3 subseeker.py -d example.com -m quick
+    python3 subseeker.py -d example.com -m quick
 
-Specify a custom output directory:
+### Specify a Custom Output Directory
 
-python3 subseeker.py -d example.com -o results/
+    python3 subseeker.py -d example.com -o results/
+
+---
 
 ## Output Files
 
-Each execution generates a timestamped output directory containing:
+Each execution generates a timestamped output directory containing the following files:
 
-subdomains.txt
+### subdomains.txt
+
 Plain text list of discovered subdomains.
 
-subdomains.json
-Structured JSON output containing metadata and results.
+### subdomains.json
 
-report.html
+Structured JSON output containing metadata and enumeration results.
+
+### report.html
+
 Simple static HTML report for offline review.
+
+---
 
 ## Sample Output
 
-SubSeeker v2.0 | STANDARD | example.com
-------------------------------------------------------------
-Passive Enumeration
-crt.sh → 187
-AlienVault → 67
-VirusTotal → 92
-Wayback → 89
-RapidDNS → 56
+    SubSeeker v2.0 | STANDARD | example.com
+    ------------------------------------------------------------
+    Passive Enumeration
+    crt.sh → 187
+    AlienVault → 67
+    VirusTotal → 92
+    Wayback → 89
+    RapidDNS → 56
 
-Brute-force Enumeration
-Using 4850 words
-Found 28 new subdomains
+    Brute-force Enumeration
+    Using 4850 words
+    Found 28 new subdomains
 
-------------------------------------------------------------
-Total: 312 subdomains discovered
-Execution Time: 42.3 seconds
-Output Directory: subseeker_example.com_YYYYMMDD/
+    ------------------------------------------------------------
+    Total: 312 subdomains discovered
+    Execution Time: 42.3 seconds
+    Output Directory: subseeker_example.com_YYYYMMDD/
+
+---
 
 ## Legal and Ethical Notice
 
@@ -121,6 +145,8 @@ Permitted use cases include:
 - Controlled research and educational environments
 
 Unauthorized scanning of systems may be illegal and unethical. The author assumes no responsibility for misuse of this software.
+
+---
 
 ## License
 
