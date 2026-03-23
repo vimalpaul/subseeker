@@ -20,7 +20,7 @@ The primary goal of SubSeeker is to help security practitioners efficiently iden
 - Passive subdomain enumeration using public intelligence sources
 - Optional DNS brute-force enumeration
 - Multiple execution modes for different reconnaissance needs
-- Clean command-line output
+- Clean command-line output 
 - Generation of text, JSON, and HTML result files
 - No API keys or authentication required
 
